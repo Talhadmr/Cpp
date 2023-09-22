@@ -2,9 +2,9 @@ CPP = c++
 
 FLAGS = -Wall -Werror -Wextra -std=c++98
 
-NAME = megaphone
+NAME = phone
 
-SRC = megaphone.cpp
+SRC = Contact.cpp Phonebook.cpp main.cpp
 
 OBJ = $(SRC:.cpp=.o)
 
@@ -18,7 +18,6 @@ clean:
 
 fclean: 
 	rm -rf $(NAME) $(OBJ)
-
 re: clean all
 
 .PHONY: clean all re
