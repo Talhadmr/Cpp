@@ -2,13 +2,13 @@
 
 void HumanA::attack()
 {
-    cout << this->name << " attacks with their " << this->pistol.getType() << endl;
+    cout << this->name << " attacks with their " << this->pistol->getType() << endl;
 }
 
-HumanA::HumanA(string name, Weapon pistol)
+HumanA::HumanA(string name, Weapon &pistol)
 {
     this->name = name;
-    this->pistol = pistol;
+    this->pistol = &pistol;
 }
 
 HumanA::~HumanA()

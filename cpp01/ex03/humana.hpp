@@ -11,12 +11,12 @@ using std::endl;
 class HumanA
 {
     public :
-        Weapon pistol;
+        Weapon *pistol;
         string name;
 
         void attack();
 
-        HumanA(string name, Weapon pistol);
+        HumanA(string name, Weapon &pistol);
         ~HumanA();
 };
 

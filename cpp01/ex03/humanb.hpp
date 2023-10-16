@@ -11,7 +11,7 @@ using std::endl;
 class HumanB
 {
     public :
-        Weapon pistol;
+        Weapon *pistol;
         string name;
 
         void attack();
@@ -19,8 +19,8 @@ class HumanB
         HumanB(string name);
         ~HumanB();
 
-        void setWeapon(Weapon pistol);
-        Weapon getWeapon(void);
+        void setWeapon(Weapon &pistol);
+        Weapon *getWeapon(void);
 };
 
 #endif

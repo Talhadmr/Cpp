@@ -3,8 +3,7 @@
 void HumanB::attack()
 {
 
-    cout << this->name << " attacks with their " << this->pistol.getType() << endl;
-
+    cout << this->name << " attacks with their " << this->pistol->getType() << endl;
 } 
 
 HumanB::HumanB(string name)
@@ -16,11 +15,11 @@ HumanB::~HumanB()
 {
 }
 
-void HumanB::setWeapon(Weapon pistol)
+void HumanB::setWeapon(Weapon &pistol)
 {
-    this->pistol = pistol;
+    this->pistol = &pistol;
 }
-Weapon HumanB::getWeapon(void)
+Weapon *HumanB::getWeapon(void)
 {
     return (this->pistol);
 }
