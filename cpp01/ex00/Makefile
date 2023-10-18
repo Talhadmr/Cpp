@@ -2,7 +2,7 @@ CPP = c++
 
 FLAGS = -Wall -Werror -Wextra -std=c++98
 
-NAME = con
+NAME = Zombie
 
 SRC = main.cpp newZombie.cpp zombie.cpp randomChump.cpp
 

@@ -2,7 +2,7 @@ CPP = c++
 
 FLAGS = -Wall -Werror -Wextra -std=c++98
 
-NAME = con
+NAME = ref
 
 SRC = main.cpp
 
