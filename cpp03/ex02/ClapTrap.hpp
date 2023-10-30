@@ -4,7 +4,7 @@
 #include <iostream>
 
 class ClapTrap {
- private:
+ protected:
   unsigned int hitPoints;
   unsigned int attackDamage;
   unsigned int energyPoint;
