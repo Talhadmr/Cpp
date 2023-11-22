@@ -7,10 +7,10 @@ int main()
 {
     try
     {
-        Bureaucrat a(21, "test");
+        Bureaucrat a(22, "test");
         std::cout << a << std::endl;
 
-	    Form form(20, "file", 3);
+	    Form form(21, "file", 3);
 	    a.signForm(form);
     }
     catch (std::exception &e)

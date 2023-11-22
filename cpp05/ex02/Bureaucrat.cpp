@@ -35,7 +35,7 @@ Bureaucrat& Bureaucrat::operator=(const Bureaucrat& other)
     return *this;
 }
 
-int Bureaucrat::getGrade()
+int Bureaucrat::getGrade() const
 {
     return this->grade;
 }
@@ -77,7 +77,7 @@ std::ostream &operator<<(std::ostream &other, Bureaucrat &c)
     return other;
 }
 
-void Bureaucrat::signForm(Form &form)
+void Bureaucrat::signForm(Aform &form)
 {
     if (form.getSign() == false)
     {
