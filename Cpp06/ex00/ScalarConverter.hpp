@@ -24,10 +24,9 @@ class ScalarConverter
         static int is_double(std::string str);
         static int is_integer(std::string str);
 
-        static void toChar(std::string _input);
-        static void toInt(std::string _input);
-        static void toFloat(std::string _input);
-        static void toDouble(std::string _input);        
+        static void printFloatWithLimits(std::string str, int flag);
+        static void printIntegerWithLimits(std::string str);
+
 };
 
 #endif
