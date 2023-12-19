@@ -35,7 +35,7 @@ Bureaucrat& Bureaucrat::operator=(const Bureaucrat& other)
     return *this;
 }
 
-int Bureaucrat::getGrade()
+int Bureaucrat::getGrade() const
 {
     return this->grade;
 }
@@ -77,7 +77,7 @@ std::ostream &operator<<(std::ostream &other, Bureaucrat &c)
     return other;
 }
 
-void Bureaucrat::signForm(Form &form)
+void Bureaucrat::signForm(Aform &form)
 {
     if (form.getSign() == false)
     {
@@ -89,7 +89,7 @@ void Bureaucrat::signForm(Form &form)
         {
             std::cerr << e.what() << '\n';
         }
-        //std::cout << this->name << " signs " << form.getName() << "\n";
+        std::cout << this->name << " signs " << form.getName() << "\n";
     }
     else
         std::cout << this->name << " cannot sign " << form.getName() << " because it is already signed\n";

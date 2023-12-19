@@ -71,7 +71,7 @@ void Form::beSigned(Bureaucrat& bureaucrat)
 {
     if (this->sign == true)
         std::cout << "Form is already signed\n";
-    else if(this->getGrade ()> bureaucrat.getGrade())
+    else if(this->getGrade() > bureaucrat.getGrade())
         throw GradeTooLowException();
     else
     {
