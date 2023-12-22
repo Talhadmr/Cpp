@@ -178,8 +178,10 @@ void ScalarConverter::convert(std::string str)
     if(WhichType(str) == "char")
     {
         std::cout << "char: " << str << std::endl;
-        printIntegerWithLimits(str);
-        printFloatWithLimits(str,0);
+        std::cout << "int: " << static_cast<int>(str[0]) << std::endl;
+        //printIntegerWithLimits(str);
+        //printFloatWithLimits(str,0);
+        std::cout << "float: " << static_cast<float>(str[0]) << ".0f" << std::endl;
         std::cout << "double: " << static_cast<double>(str[0]) << ".0" << std::endl;
     }
     else if(WhichType(str) == "integer")
@@ -210,7 +212,6 @@ void ScalarConverter::convert(std::string str)
             std::cout << "char: '" << static_cast<char>(std::stod(str)) << "'" << std::endl;
         else
             std::cout << "char: " << "Non displayable " << std::endl;
-        std::cout << "char: " << "Non displayable " << std::endl;
         printIntegerWithLimits(str);
         printFloatWithLimits(str,1);
 
