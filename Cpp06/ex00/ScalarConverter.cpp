@@ -198,7 +198,7 @@ void ScalarConverter::convert(std::string str)
     else if (WhichType(str) == "float")
     {
         if(static_cast<int>(std::stod(str)) > 32 && static_cast<int>(std::stod(str)) < 126)
-            std::cout << "char: " << static_cast<char>(std::stod(str)) << std::endl;
+            std::cout << "char: " << "'" << static_cast<char>(std::stod(str)) << "'" << std::endl;
         else
             std::cout << "char: '" << "Non displayable " <<  "'" <<std::endl;
         printIntegerWithLimits(str);
@@ -221,8 +221,8 @@ void ScalarConverter::convert(std::string str)
     {
         std::cout << "char: " << "impossible" << std::endl;
         std::cout << "int: " << "impossible" << std::endl;
+        std::cout << "float: " << "nanf" << std::endl;
         std::cout << "double: " << "nan" << std::endl;
-        std::cout << "float: " << "nan.f" << std::endl;
     }
     else
         std::cout << "Error" << std::endl;

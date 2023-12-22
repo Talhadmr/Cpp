@@ -2,16 +2,17 @@ CPP = c++
 
 FLAGS = -Wall -Werror -Wextra -std=c++98
 
-NAME = serializer
+NAME = ScalarConverter
 
-SRC = main.cpp Serializer.cpp
+SRC = main.cpp Base.cpp A.cpp B.cpp C.cpp
+
 
 OBJ = $(SRC:.cpp=.o)
 
 all: $(NAME)
 
 $(NAME): $(OBJ)
-		$(CPP) $(FLAGS) $(OBJ) -o $(NAME)
+		$(CPP) $(FLAGS) $(OBJ) -I./Base.hpp -o $(NAME)
 
 clean:
 	rm -rf $(OBJ)

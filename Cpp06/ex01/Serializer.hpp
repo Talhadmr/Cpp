@@ -10,13 +10,15 @@ typedef struct Data
     std::string s2;
 } Data;
 
-class Serilazier
+class Serializer
 {
     private:
         /* data */
     public:
-        Serilazier(/* args */);
-        ~Serilazier();
+        Serializer(/* args */);
+        ~Serializer();
+        Serializer(Serializer const &src);
+        Serializer &operator=(Serializer const &src);
 
         uintptr_t serialize(Data* ptr);
         Data* deserialize(uintptr_t raw);
