@@ -12,41 +12,43 @@ class   Array
 {
     private:
         T *Arr;
+        unsigned int size;
     public:
         Array()
         {
-            std::cout << "deffault constructor called\n";
             this->Arr = new T[0];
         }
         ~Array()
         {
-            std::cout << "deffault destructor called\n";
             delete this->Arr;
         }
         Array(unsigned int n)
         {
-            std::cout << "parameter constructor called\n";
+
             this->Arr = new T[n];
+            this->size = n;
         }
         Array(const Array &copy, unsigned int n)
         {
-            std::cout << "copy constructor called\n";
+
+
             this->Arr = new T[n];
             for (unsigned int i = 0; i < n; i++)
                 this->Arr[i] = copy.Arr[i];
         }
-        Array   &operator = (const Array &copy, unsigned int n)
+        
+        Array& operator= (const Array &copy)
         {
-            std::cout << "= constructor called\n";
-            this->Arr = new T[n];
-            for (int i = 0; i < n; i++)
+
+
+            this->Arr = new T[this->size];
+            for (int i = 0; i < this->size ; i++)
                 this->Arr[i] = copy.Arr[i];
             return *this;
         }
-        T &operator [] (unsigned  int index, , unsigned int n)
+        T& operator[] (unsigned int index)
         {
-            std::cout << "[] constructor called\n";
-            if(index >= n)
+            if(index >= this->size)
                 throw std::out_of_range("Index out of range");
             else
                 return this->Arr[index];
