@@ -1,4 +1,4 @@
-#include "span.hpp"
+#include "Span.hpp"
 
 Span::Span(int size)
 {
@@ -6,27 +6,52 @@ Span::Span(int size)
     std::cout << "one parameter constructor called\n";
 };
 
-void Span::add_To_Array(int num)
+Span::Span(Span const &other)
+{
+    _size = other._size;
+    arr = other.arr;
+    std::cout << "copy constructor called\n";
+};
+
+Span &Span::operator=(Span const &other)
+{
+    _size = other._size;
+    arr = other.arr;
+    std::cout << "assignation operator called\n";
+    return *this;
+};
+
+Span::~Span()
+{
+    std::cout << "destructor called\n";
+};
+
+Span::Span()
+{
+    std::cout << "default constructor called\n";
+};
+
+void Span::addNumber(int num)
 {
     if(arr.size() >= _size)
     {
-        std::cout << "falan filan\n";
+        std::cout << "error\n";
         exit(1);
     }
     arr.push_back(num);
 }
 
-void Span::multi_Adder(int *arr, int falan)
+void Span::multi_Adder(int *arr, int s)
 {
-    if(falan > _size)
+    if(s > _size)
     {
-        std::cout << "falan filan\n";
+        std::cout << "arror\n";
         exit(1);
     }
 
-    for(int i = 0; i < falan; i++)
+    for(int i = 0; i < s; i++)
     {
-        add_To_Array(arr[i]);
+        addNumber(arr[i]);
     }
 }
 
@@ -37,7 +62,7 @@ void Span::print_Arr()
         std::cout << *itr << std::endl;
 }
 
-void Span::longest_Span()
+int Span::longestSpan()
 {
     int min = arr[0];
     int max = arr[0];
@@ -53,32 +78,37 @@ void Span::longest_Span()
     int result;
 
     result = max - min;
-    std::cout << "res: " << result << std::endl;
+    return result;
 
 }
 
-void Span::shortest_Span()
+int Span::shortestSpan()
 {
     int fi;
     int pha;
     int result;
     int i;
     int j;
-
+    int tmp;
     fi = arr[0];
     pha = arr[1];
-    result = pha - fi;
+    if(fi > pha)
+        result = fi - pha;
+    else
+        result = pha - fi;
     i = 0;
     while (i < arr.size())
     {
         j = 0;
         while (j < arr.size())
         {
-            if(arr[j] - arr[i] < result && arr[j] - arr[i] > 0 )
-                result = arr[j] - arr[i];
+            if((arr[i] - arr[j] < result) && ((arr[i] - arr[j]) > 0))
+            {
+                result = arr[i] - arr[j];
+            }
             j++;
         }
         i++;   
     }
-    std::cout << "res: " << result << std::endl;
+    return result;
 }

@@ -23,6 +23,7 @@ typename T::iterator easyfind(T a, int b)
 
     itr = std::find(a.begin(), a.end(), b);
 
+
     if (itr == a.end())
         throw no_In();
     else

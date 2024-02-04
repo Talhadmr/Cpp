@@ -9,15 +9,18 @@ class Span
     public:
         int _size;
         std::vector<int> arr;
-        
+        Span();
         Span(int size);
+        Span(Span const &other);
+        Span &operator=(Span const &other);
+        ~Span();
         
-        void add_To_Array(int num);
+        void addNumber(int num);
         void multi_Adder(int *num, int size_Of_Arr);
         void print_Arr();
 
-        void longest_Span();
-        void shortest_Span();
+        int longestSpan();
+        int shortestSpan();
 };
 
 

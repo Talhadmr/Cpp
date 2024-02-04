@@ -15,7 +15,7 @@ int main()
         itr = easyfind(array, 5);
         std::cout << "find: " << *itr << std::endl;
 
-        itr = easyfind(array, 8);
+        itr = easyfind(array, 10);
         std::cout << "find: " << *itr << std::endl;
     }
     catch (no_In &excpt)

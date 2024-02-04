@@ -1,12 +1,15 @@
-#include "span.hpp"
+#include "Span.hpp"
 
 int main()
 {
-    Span a(5);
+    Span sp = Span(5);
     
-    int arr[6] = {1, 23, 6, 18, 11};
-    a.multi_Adder(arr,5);
-    a.print_Arr();
-    a.longest_Span();
-    a.shortest_Span();
+    sp.addNumber(6);
+    sp.addNumber(3);
+    sp.addNumber(17);
+    sp.addNumber(9);
+    sp.addNumber(11);
+    std::cout << sp.shortestSpan() << std::endl;
+    std::cout << sp.longestSpan() << std::endl;
+    return 0;
 }
